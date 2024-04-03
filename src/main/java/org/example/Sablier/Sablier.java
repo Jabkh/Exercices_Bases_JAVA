@@ -6,32 +6,41 @@ public class Sablier {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        // Enregistrer le temps de début
-        long startTime = System.currentTimeMillis();
+        long tempsDebut;
 
-        // Enregistrer le temps de fin
-        long endTime = System.currentTimeMillis();
 
-        // Calculer le temps écoulé en millisecondes
-        long elapsedTime = endTime - startTime;
+        long tempsFin;
 
-        // Convertir le temps écoulé en secondes
-        double elapsedSeconds = elapsedTime / 1000.0;
 
-        // Demander à l'utilisateur de taper un message
+        long tempsEcoule;
+
+
+        double tempsEcouleSecondes;
+
+        // Demande à l'utilisateur de taper un message
         System.out.println("Tapez un message et appuyez sur Entrée pour commencer le chronomètre :");
         String message = scanner.nextLine();
+
+        // Enregistre le temps de début
+        tempsDebut = System.currentTimeMillis();
 
         // Demander à l'utilisateur de taper un deuxième message
         System.out.println("Tapez un deuxième message et appuyez sur Entrée pour arrêter le chronomètre :");
         message = scanner.nextLine();
 
+        // Enregistre le temps de fin
+        tempsFin = System.currentTimeMillis();
+
+        // Calcule le temps écoulé en millisecondes
+        tempsEcoule = tempsFin - tempsDebut;
+
+        // Convertit le temps écoulé en secondes
+        tempsEcouleSecondes = tempsEcoule / 1000.0;
 
         // Afficher le temps écoulé
         System.out.println("""
                 Temps écoulé entre les deux messages : 
-                 %f secondes.""".formatted(elapsedSeconds));
-
+                 %f secondes.""".formatted(tempsEcouleSecondes));
 
         scanner.close();
     }
